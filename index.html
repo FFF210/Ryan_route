@@ -69,8 +69,8 @@
                 <div class="text-muted">by 무명의 게임덬 | 12시간 전</div>
             </div>
             <div class="vote-buttons">
-                <button class="btn btn-outline-primary">▲ 213</button>
-                <button class="btn btn-outline-secondary">▼</button>
+                <button id="upvote" class="btn btn-outline-primary">▲ <span id="vote-count">213</span></button>
+                <button id="downvote" class="btn btn-outline-secondary">▼</button>
             </div>
         </div>
         <div class="post-content">
@@ -397,5 +397,15 @@
             </div>
         
         </div>        
-</body>
-</html>
+        <script>
+            document.getElementById("upvote").addEventListener("click", function() {
+                let countElement = document.getElementById("vote-count");
+                countElement.textContent = parseInt(countElement.textContent) + 1;
+            });
+            document.getElementById("downvote").addEventListener("click", function() {
+                let countElement = document.getElementById("vote-count");
+                countElement.textContent = parseInt(countElement.textContent) - 1;
+            });
+        </script>
+    </body>
+    </html>
